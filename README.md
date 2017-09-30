@@ -23,28 +23,30 @@ accounting.js，是一款货币运算的轻量库
 
 > formatMoney(参数一，参数二,参数三,参数四,参数五);
 
+> formatMoney (parameter 1, parameter 2, parameter 3, parameter 4, parameter 5);
+
 参数 | 参数说明
 ---|---
-参数一 | 货币值（多个值是可以放在数组内）
-参数二： | 货币的符号
-参数三 | 小数点后面尾数多少位(自动四舍五入帮你算好)
-参数四 | 改变分隔符号，比如满3个单位就的使用,逗号来分隔；
-参数五 | 改变小数点的符号
+参数一(parameter 1) | 货币值（多个值是可以放在数组内）Currency number (multiple values can be placed in an array)
+参数二(parameter 2) | 货币的符号 Symbol of money
+参数三(parameter 3) | 小数点后面尾数多少位(自动四舍五入帮你算好)How many digits behind the decimal point (automatically rounded to help you)
+参数四(parameter 4) | 改变分隔符号，比如满3个单位就的使用,逗号来分隔；Change the delimiter,such full of 3 units are used,separated by commas;
+参数五(parameter 5) | 改变小数点的符号 Change the sign of the decimal point
 
 ```javascript
-// 参数一：货币值
+// 参数一：货币值 Parameter 1: currency value
 console.log(accounting.formatMoney(12345678)); // 输出结果：$12345678
 
-// 参数二： 货币的符号（默认是美金符号）
+// 参数二： 货币的符号（默认是美金符号）Parameter 2: currency symbol (default is dollar symbol)
 console.log(accounting.formatMoney(12345678,'￥'));
 
-// 参数三：小数点后面尾数多少位(自动四舍五入帮你算好)
+// 参数三：小数点后面尾数多少位(自动四舍五入帮你算好)  Parameter 3: how many digits behind the decimal point (automatically rounded to help you)
 console.log(accounting.formatMoney(12345.678,'¥',2)) // ¥12345.68
 
-// 参数四:改变分隔符号，比如满3个单位就的使用,逗号来分隔；
+// 参数四:改变分隔符号，比如满3个单位就的使用,逗号来分隔；How many digits behind the decimal point (automatically rounded to help you)
 console.log(accounting.formatMoney(12345.678,'¥',2,'▲')) // 
 
-// 下面参数五：改变小数点的符号
+// 下面参数五：改变小数点的符号 Change the sign of the decimal point
 console.log(accounting.formatMoney(-12345.678,'¥',2,'▲','★')); // ¥12▲345★68
 ```
 
@@ -52,7 +54,9 @@ console.log(accounting.formatMoney(-12345.678,'¥',2,'▲','★')); // ¥12▲34
 
 > 看着这么多传参，太臃肿，1、如果我只要是小数点符号，改变了，还要一个一个值传进去，是不是不优化啊。2、再加上看的不直观，不能一眼就能看出传的什么东西，那么官方就提供了一个非常有效传参方式
 
-> 将第二个参数用json对象方式传值
+> Looking at so many arguments, too fat, 1, if I just decimal point symbol, changed, but also a value passed in, is not optimized ah?. 2, coupled with the view is not intuitive, you can not see what is transmitted at once, then the official provides a very effective way to pass reference
+
+> 将第二个参数用json对象方式传值 The second argument is passed as a json object
 
 ```
 // 语法：
