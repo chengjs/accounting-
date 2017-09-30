@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<!-- 下面的使用百度资源库加载货币accounting.js -->
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/accounting.js/0.3.2/accounting.min.js"></script>
+	<script type="text/javascript">
+		/*
+		formatMoney(参数一，参数二,参数三,参数四,参数五);
+		参数 | 参数说明
+		---|---
+		参数一 | 货币值（多个值是可以放在数组内）
+		参数二： | 货币的符号
+		参数三 | 小数点后面尾数多少位(自动四舍五入帮你算好)
+		参数四 | 改变分隔符号，比如满3个单位就的使用,逗号来分隔；
+		参数五 | 改变小数点的符号
+	
+		*/ 
+		// 参数一：货币值
+		console.log(accounting.formatMoney(12345678)); // 输出结果：$12345678
+
+		// 参数二： 货币的符号（默认是美金符号）
+		console.log(accounting.formatMoney(12345678,'￥'));
+
+		// 参数三：小数点后面尾数多少位(自动四舍五入帮你算好)
+		console.log(accounting.formatMoney(12345.678,'¥',2)) // ¥12345.68
+
+		// 参数四:改变分隔符号，比如满3个单位就的使用,逗号来分隔；
+		console.log(accounting.formatMoney(12345.678,'¥',2,'▲')) // 
+
+		// 下面参数五：改变小数点的符号
+		console.log(accounting.formatMoney(-12345.678,'¥',2,'▲','★')); // ¥12▲345★68
+	</script>
+</body>
+</html>
